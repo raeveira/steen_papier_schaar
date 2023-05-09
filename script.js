@@ -4,6 +4,7 @@ let playerScoreSpan = document.getElementById("player-score");
 let computerScoreSpan = document.getElementById("computer-score");
 let resultDiv = document.getElementById("result");
 
+// Get buttons into js
 document.getElementById("rock-button").addEventListener("click", function() {
   play("rock");
 });
@@ -16,6 +17,7 @@ document.getElementById("scissors-button").addEventListener("click", function() 
   play("scissors");
 });
 
+// Computer handler
 function play(playerChoice) {
   let computerChoice = computerPlay();
   let result = getResult(playerChoice, computerChoice);
@@ -29,6 +31,7 @@ function computerPlay() {
   return choices[randomIndex];
 }
 
+// Different combinations (win/lose)
 function getResult(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     return 'tie';
@@ -43,6 +46,7 @@ function getResult(playerChoice, computerChoice) {
   }
 }
 
+// Show result
 function displayResult(result, playerChoice, computerChoice) {
   let resultText = '';
   if (result === 'win') {
@@ -55,6 +59,7 @@ function displayResult(result, playerChoice, computerChoice) {
   resultDiv.innerHTML = `${resultText} You chose ${playerChoice}, computer chose ${computerChoice}.`;
 }
 
+//Updates the scoreboard either won or lost.
 function updateScore(result) {
   if (result === 'win') {
     playerScore++;
