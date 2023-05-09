@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #scoreboard {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  #scoreboard span {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 20px;
+    outline: none;
+    transition: transform 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    transform: scale(0.9);
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  #result {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  
