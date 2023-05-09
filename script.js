@@ -33,38 +33,62 @@ function computerPlay() {
 
 // Different combinations (win/lose)
 function getResult(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) {
-    return 'tie';
-  } else if (
-    (playerChoice === 'rock' && computerChoice === 'scissors') ||
-    (playerChoice === 'paper' && computerChoice === 'rock') ||
-    (playerChoice === 'scissors' && computerChoice === 'paper')
-  ) {
-    return 'win';
-  } else {
-    return 'lose';
+  switch (playerChoice) {
+    case 'rock':
+      switch (computerChoice) {
+        case 'rock':
+          return 'tie';
+        case 'paper':
+          return 'lose';
+        case 'scissors':
+          return 'win';
+      }
+    case 'paper':
+      switch (computerChoice) {
+        case 'rock':
+          return 'win';
+        case 'paper':
+          return 'tie';
+        case 'scissors':
+          return 'lose';
+      }
+    case 'scissors':
+      switch (computerChoice) {
+        case 'rock':
+          return 'lose';
+        case 'paper':
+          return 'win';
+        case 'scissors':
+          return 'tie';
+      }
   }
 }
 
 // Show result
 function displayResult(result, playerChoice, computerChoice) {
   let resultText = '';
-  if (result === 'win') {
-    resultText = 'You win!';
-  } else if (result === 'lose') {
-    resultText = 'You lose!';
-  } else {
-    resultText = "It's a tie!";
+  switch (result) {
+    case 'win':
+      resultText = 'You win!';
+      break;
+    case 'lose':
+      resultText = 'You lose!';
+      break;
+    default:
+      resultText = "It's a tie!";
   }
   resultDiv.innerHTML = `${resultText} You chose ${playerChoice}, computer chose ${computerChoice}.`;
 }
 
 //Updates the scoreboard either won or lost.
 function updateScore(result) {
-  if (result === 'win') {
-    playerScore++;
-  } else if (result === 'lose') {
-    computerScore++;
+  switch (result) {
+    case 'win':
+      playerScore++;
+      break;
+    case 'lose':
+      computerScore++;
+      break;
   }
   playerScoreSpan.innerHTML = playerScore;
   computerScoreSpan.innerHTML = computerScore;
